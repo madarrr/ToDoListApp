@@ -54,19 +54,33 @@
                                         </div>
                                       </div>
                                 
-                                      <div class="row" style="margin:;">
-                                      <div class="card col-sm-3" style="height:13rem; margin:35px;" >
-                                            <div class="card-body">
+                                      <div class="row" >
+                                      <div class="card col-sm-3" style="height:13rem; margin:10px;" id="yoro" >
+                                            <div class="card-body" >
                                                 <h5 class="card-title">Daily Task TRANS MFT </h5>   
                                                 <h6 class="card-subtitle mb-2 text-muted">2 Hours</h6>
                                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                                <button type="submit" class="btn btn-danger"> <i class="fa fa-trash"></i></button>
-                                                <button type="submit" class="btn btn-success btn-circle btn-sm" style="float:right; margin:2px;"> </i></button>
-                                                <button type="submit" class="btn btn-warning btn-circle btn-sm" style="float:right; margin:2px;"> </i></button>
+                                                <button type="submit" class="btn btn-danger" style="height:38px"> <i class="fa fa-trash"></i></button>
+                                                <div class="form-check form-switch" style="float:right; width:50px;">
+                                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" style="width:50px; height:25px">
+                                                  </div>
                                             
                                             </div>
                                       </div> 
-      
+                                      <div class="card col-sm-3" style="height:13rem; margin:10px;" id="yoro" >
+                                            <div class="card-body" >
+                                                <h5 class="card-title">Daily Task TRANS MFT </h5>   
+                                                <h6 class="card-subtitle mb-2 text-muted">2 Hours</h6>
+                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                <button type="submit" class="btn btn-danger" style="height:38px"> <i class="fa fa-trash"></i></button>
+                                                <div class="form-check form-switch" style="float:right; width:50px;">
+                                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" style="width:50px; height:25px">
+                                                  </div>
+                                            
+                                            </div>
+                                      </div> 
+
+
                                      
                                       </div>           
                                 </div>          
@@ -76,6 +90,17 @@
              
        
      </div>
+     <!-- <script>
+      const btn = document.getElementById('cardcolor');
+
+cardcolor.addEventListener('click', function onClick(event) {
+  // 👇️ change background color
+  document.body.style.backgroundColor = "black";
+
+  // 👇️ optionally change text color
+  // document.body.style.color = 'white';
+});
+     </script> -->
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>  
 </body>
 </html>
