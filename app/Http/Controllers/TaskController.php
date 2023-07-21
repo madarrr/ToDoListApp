@@ -12,8 +12,17 @@ class TaskController extends Controller
         return view('index');
     }
 
-    public function store()
+    public function store(TaskRequest $request)
+
     {
+        $validated= $request->validated();
+
+        Task::create([
+            'titre'=>$_POST['titre'],
+            'duration'=>$_POST['duration'],
+            'description'=>$_POST['description']
+        ]);
+        return redirect('index');
 
     }
 
