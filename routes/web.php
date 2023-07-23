@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/home',[TaskController::class,'show'])->name('home');
+Route::post('/new',[TaskController::class,'store'])->name('new');

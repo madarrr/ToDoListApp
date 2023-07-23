@@ -11,16 +11,16 @@ class TaskRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
 
-    public function message()
+    public function messages()
     {
         return[
             'titre.required' => "Oups!un Titre est requis",
             'duration.required' => "Oups! une durer est réquise",
-            'ti.required' => "Oups!un Titre est requis",
+            'description.required' => "Oups!un Titre est requis",
 
         ];
 
@@ -34,9 +34,8 @@ class TaskRequest extends FormRequest
     public function rules(): array
     {
         return [
-
             //
-            'titre' => 'required|string|max:255',
+            'titre' => 'required|string',
             'duration' => 'required|string',
             'description' => 'required|string',
         ];

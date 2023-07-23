@@ -13,9 +13,11 @@
     <div class="container">
             <div class="card">
                      <div class="card-body">
-                                 <h2 class="card-title">ToDoList <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" class="btn btn-primary btn-circle btn-sm" style="float:right"> <i class="fa fa-plus"></i></button></h2>
+                                 <h2 class="card-title">ToDoList </h2>
+                                 <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" class="btn btn-primary btn-circle btn-sm" style="float:right"> <i class="fa fa-plus"></i></button>
                            <div class="container">
-                                  <form action="" method="post">
+                           
+                         
                                   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                           <div class="modal-content">
@@ -23,33 +25,36 @@
                                               <h5 class="modal-title" id="exampleModalLabel">New Task</h5>
                                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
+                                            <form method="POST" action="{{ route('new') }}" enctype="multipart/form-data">
+                                            @csrf
                                             <div class="modal-body">
-                                              <form>
                                                 <div class="mb-3">
                                                   <label for="recipient-name" class="col-form-label">Task Title:</label>
-                                                  <input type="text" class="form-control" id="recipient-name">
+                                                  <input type="text" class="form-control" id="recipient-name" name="titre">
                                                 </div>
                                                 <div class="mb-3">
                                                   <label for="recipient-name" class="col-form-label">Duration:</label>
-                                                  <select name="pets" id="pet-select" class="form-control">
-                                                    <option value="">--Please choose the duration--</option>
-                                                    <option value="dog">1 Hour</option>
-                                                    <option value="cat">2 hours</option>
-                                                    <option value="hamster">3 Hours</option>
-                                                    <option value="parrot">4 Hours</option>
-                                                    <option value="spider">5 Hours</option>
-                                                    <option value="goldfish">6 Hours</option>
+                                                  <select name="duration" id="duration-select" class="form-control">
+                                                    <option value="" >--Please choose the duration--</option>
+                                                    <option value="1 Hour">1 Hour</option>
+                                                    <option value="2 Hours">2 Hours</option>
+                                                    <option value="3 Hours">3 Hours</option>
+                                                    <option value="4 Hours">4 Hours</option>
+                                                    <option value="5 Hours">5 Hours</option>
+                                                    <option value="6 Hours">6 Hours</option>
                                                 </select>
+                      
                                                 </div>
                                                 <div class="mb-3">
+                                   
                                                   <label for="message-text" class="col-form-label">Description:</label>
-                                                  <textarea class="form-control" id="message-text"></textarea>
+                                                  <textarea class="form-control" id="message-text" name="description"></textarea>
+
                                                 </div>
-                                              </form>
                                             </div>
                                             <div class="modal-footer">
                                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                              <button type="button" class="btn btn-primary">Save Task</button> 
+                                              <button type="submit" class="btn btn-primary">Save Task</button> 
                                             </div>
                                           </div>
                                         </div>
