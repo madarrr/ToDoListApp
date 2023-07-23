@@ -12,7 +12,9 @@ class TaskController extends Controller
     //
     public function show()
     {
-        return view('index');
+        return view('index',['tasks' => Task::all()
+     
+    ]);     
     }
 
     public function store(TaskRequest $request)

@@ -13,10 +13,10 @@
     <div class="container">
             <div class="card">
                      <div class="card-body">
-                                 <h2 class="card-title">ToDoList </h2>
-                                 <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" class="btn btn-primary btn-circle btn-sm" style="float:right"> <i class="fa fa-plus"></i></button>
+                                 <h2 class="card-title">ToDoList  <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" class="btn btn-primary btn-circle btn-sm" style="float:right"> <i class="fa fa-plus"></i></button></h2>
+                                
                            <div class="container">
-                           
+                          
                          
                                   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
@@ -60,21 +60,23 @@
                                         </div>
                                       </div>
                                   </form>
-                                
+                              
                                       <div class="row" >
+                                      @foreach($tasks as $task)
                                       <div class="card col-sm-3" style="height:13rem; margin:10px; background-image:url({{url('/assets/')}})" id="yoro" >
                                             <div class="card-body" >
-                                                <h5 class="card-title">Daily Task TRANS MFT </h5>   
-                                                <h6 class="card-subtitle mb-2 text-muted">2 Hours</h6>
-                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                <h5 class="card-title">{{ $task['titre']}} </h5>   
+                                                <h6 class="card-subtitle mb-2 text-muted">{{ $task['duration']}}</h6>
+                                                <p class="card-text">{{  $task['description']}}</p>
                                                 <button type="submit" class="btn btn-danger" style="height:38px"> <i class="fa fa-trash"></i></button>
                                                 <div class="form-check form-switch" style="float:right; width:50px;">
                                                     <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" style="width:50px; height:25px">
                                                   </div>
                                             
                                             </div>
+                                               
                                       </div>
-
+                                      @endforeach
                               </div>           
                        </div>          
                                                
