@@ -16,8 +16,6 @@
                                  <h2 class="card-title">ToDoList  <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" class="btn btn-primary btn-circle btn-sm" style="float:right"> <i class="fa fa-plus"></i></button></h2>
                                 
                            <div class="container">
-                          
-                         
                                   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                           <div class="modal-content">
@@ -28,12 +26,23 @@
                                             <form method="POST" action="{{ route('new') }}" enctype="multipart/form-data">
                                             @csrf
                                             <div class="modal-body">
+                                         
                                                 <div class="mb-3">
+                                                  
                                                   <label for="recipient-name" class="col-form-label">Task Title:</label>
+                                                  @error('titre')
+                                                  <p> {{$message }}</p>
+                                                  @enderror  
                                                   <input type="text" class="form-control" id="recipient-name" name="titre">
+ 
                                                 </div>
+                                            
+                                           
                                                 <div class="mb-3">
                                                   <label for="recipient-name" class="col-form-label">Duration:</label>
+                                                @error('duration')
+                                                <p> {{$message }}</p>
+                                                @enderror
                                                   <select name="duration" id="duration-select" class="form-control">
                                                     <option value="" >--Please choose the duration--</option>
                                                     <option value="1 Hour">1 Hour</option>
@@ -43,14 +52,19 @@
                                                     <option value="5 Hours">5 Hours</option>
                                                     <option value="6 Hours">6 Hours</option>
                                                 </select>
-                      
+
                                                 </div>
+                                         
+                                           
                                                 <div class="mb-3">
-                                   
+                                                @error('description')
+                                                  <p> {{$message }}</p>
+                                                @enderror
                                                   <label for="message-text" class="col-form-label">Description:</label>
                                                   <textarea class="form-control" id="message-text" name="description"></textarea>
 
                                                 </div>
+                                           
                                             </div>
                                             <div class="modal-footer">
                                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
