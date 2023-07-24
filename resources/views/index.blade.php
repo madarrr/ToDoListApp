@@ -7,16 +7,19 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
+<!-- import jquery -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <title>ToDoList</title>
 </head>
 <body>
     <div class="container">
             <div class="card">
                      <div class="card-body">
-                                 <h2 class="card-title">ToDoList  <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" class="btn btn-primary btn-circle btn-sm" style="float:right"> <i class="fa fa-plus"></i></button></h2>
+                                 <h2 class="card-title">ToDoList  <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-whatever="@mdo" class="btn btn-primary btn-circle btn-sm" style="float:right"> <i class="fa fa-plus"></i></button></h2>
                                 
                            <div class="container">
-                                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBodalLabel"  aria-hidden="true">
                                         <div class="modal-dialog">
                                           <div class="modal-content">
                                             <div class="modal-header">
@@ -33,7 +36,7 @@
                                                   @error('titre')
                                                   <p> {{$message }}</p>
                                                   @enderror  
-                                                  <input type="text" class="form-control" id="recipient-name" name="titre">
+                                                  <input type="text" class="form-control" id="titre" name="titre" required>
  
                                                 </div>
                                             
@@ -43,7 +46,7 @@
                                                 @error('duration')
                                                 <p> {{$message }}</p>
                                                 @enderror
-                                                  <select name="duration" id="duration-select" class="form-control">
+                                                  <select name="duration" id="duration-select" class="form-control" required>
                                                     <option value="" >--Please choose the duration--</option>
                                                     <option value="1 Hour">1 Hour</option>
                                                     <option value="2 Hours">2 Hours</option>
@@ -61,14 +64,14 @@
                                                   <p> {{$message }}</p>
                                                 @enderror
                                                   <label for="message-text" class="col-form-label">Description:</label>
-                                                  <textarea class="form-control" id="message-text" name="description"></textarea>
+                                                  <textarea class="form-control" id="message-text" name="description" required ></textarea>
 
                                                 </div>
                                            
                                             </div>
                                             <div class="modal-footer">
                                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                              <button type="submit" class="btn btn-primary">Save Task</button> 
+                                              <button type="submit" class="btn btn-primary" id="btn">Save Task</button> 
                                             </div>
                                           </div>
                                         </div>
@@ -82,10 +85,15 @@
                                                 <h5 class="card-title">{{ $task['titre']}} </h5>   
                                                 <h6 class="card-subtitle mb-2 text-muted">{{ $task['duration']}}</h6>
                                                 <p class="card-text">{{  $task['description']}}</p>
+
+                                     
                                                 <button type="submit" class="btn btn-danger" style="height:38px"> <i class="fa fa-trash"></i></button>
+
                                                 <div class="form-check form-switch" style="float:right; width:50px;">
                                                     <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" style="width:50px; height:25px">
                                                   </div>
+                                             
+
                                             
                                             </div>
                                                
@@ -97,6 +105,8 @@
              </div>  
        
      </div>
+
+  
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>  
 </body>
 </html>
