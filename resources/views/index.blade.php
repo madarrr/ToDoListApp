@@ -85,12 +85,14 @@
                                                 <h5 class="card-title">{{ $task['titre']}} </h5>   
                                                 <h6 class="card-subtitle mb-2 text-muted">{{ $task['duration']}}</h6>
                                                 <p class="card-text">{{  $task['description']}}</p>
-
-                                     
-                                                <button type="submit" class="btn btn-danger" style="height:38px"> <i class="fa fa-trash"></i></button>
-
-                                                <div class="form-check form-switch" style="float:right; width:50px;">
-                                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" style="width:50px; height:25px">
+                                                   <form action="{{route('tasks',$task->id)}}" method="POST">
+                                                    @csrf
+                                                    @method('delete')                                        
+                                                     <button type="submit" data-id="{{ $task->id }}" class="btn btn-danger" style="height:38px"> <i class="fa fa-trash"></i></button>
+                                                     <div class="form-check form-switch" style="float:right; width:50px;">
+                                                     <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" style="width:50px; height:25px">
+                                                   </form>
+                                                         
                                                   </div>
                                              
 

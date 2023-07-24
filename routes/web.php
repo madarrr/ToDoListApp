@@ -21,4 +21,4 @@ Route::get('/', function () {
 Route::get('/home',[TaskController::class,'show'])->name('home');
 Route::post('/new',[TaskController::class,'store'])->name('new');
 
-// Route::delete('/tasks/{id}',[TaskController::class,'destroy'])->name('tasks.destroy');
+Route::delete('/tasks/{id}',[TaskController::class,'destroy'])->name('tasks');

@@ -30,12 +30,12 @@ class TaskController extends Controller
 
     }
 
-    // public function destroy(Task $id)
-    // {
-    
-    //     $id->delete();
-    //     return redirect()->route('home');
+    public function destroy($id)
+    {
+        $task = Task::findOrFail($id);
+        $task->delete();
+       
 
 
-    // }
+    }
 }
