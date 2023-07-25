@@ -26,7 +26,7 @@ class TaskController extends Controller
           $duration= 'duration'=>$_POST['duration'],
           $description='description'=>$_POST['description']
           ]);
-          return redirect()->route('home');
+          return redirect()->route('home')->with('state','Task has been added with success');;
 
     }
 

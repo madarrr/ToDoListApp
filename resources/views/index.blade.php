@@ -13,11 +13,10 @@
     <title>ToDoList</title>
 </head>
 <body>
+
     <div class="container">
             <div class="card">
-      @if(session('status'))
-      <div class="alert alert-success"> {{session('status')}}</div>
-      @endif
+  
                      <div class="card-body">
                                  <h2 class="card-title">ToDoList  <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-whatever="@mdo" class="btn btn-primary btn-circle btn-sm" style="float:right"> <i class="fa fa-plus"></i></button></h2>
                                 
@@ -108,7 +107,12 @@
                        </div>          
                                                
              </div>  
-       
+                      @if(session('status'))
+                <div class="alert alert-danger"> {{session('status')}}</div>
+                @endif
+                    @if(session('state'))
+          <div class="alert alert-success"> {{session('state')}}</div>
+          @endif
      </div>
 
   
