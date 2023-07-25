@@ -73,7 +73,7 @@
                                             </div>
                                             <div class="modal-footer">
                                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                              <button type="submit" class="btn btn-primary" id="btn">Save Task</button> 
+                                                <button type="submit" class="btn btn-primary" id="btn">Save Task</button> 
                                             </div>
                                           </div>
                                         </div>
@@ -91,14 +91,7 @@
                                                     @csrf
                                                     @method('delete')                                        
                                                      <button type="submit" data-id="{{ $task->id }}" class="btn btn-danger" style="height:38px"> <i class="fa fa-trash"></i></button>
-                                                     <div class="form-check form-switch" style="float:right; width:50px;">
-                                                     <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" style="width:50px; height:25px">
-                                                   </form>
-                                                         
-                                                  </div>
-                                             
-
-                                            
+                                                   </form>                                            
                                             </div>
                                                
                                       </div>
