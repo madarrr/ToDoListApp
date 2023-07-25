@@ -90,7 +90,10 @@
                                                    <form action="{{route('tasks',$task->id)}}" method="POST">
                                                     @csrf
                                                     @method('delete')                                        
-                                                     <button type="submit" data-id="{{ $task->id }}" class="btn btn-danger" style="height:38px"> <i class="fa fa-trash"></i></button>
+                                                     <button type="submit" data-id="{{ $task->id }}" class="btn btn-danger" style="height:38px; width:38px;"> <i class="fa fa-trash"></i></button>
+
+                                                     <button type="button" class="btn btn-info rounded-circle" style="margin-left:5px" ></button>
+                                                     <button type="button" class="btn btn-info rounded-circle" style="background-color:orange" ></button>
                                                    </form>                                            
                                             </div>
                                                
