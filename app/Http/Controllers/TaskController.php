@@ -34,6 +34,7 @@ class TaskController extends Controller
     {
         $task = Task::findOrFail($id);
         $task->delete();
+        return redirect()->route('home')->with('status','Task has been delete with success');
        
 
 
