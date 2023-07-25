@@ -15,12 +15,8 @@
 <body>
 
     <div class="container">
-            <div class="card">
-  
-                     <div class="card-body">
+        
                                  <h2 class="card-title">ToDoList  <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-whatever="@mdo" class="btn btn-primary btn-circle btn-sm" style="float:right"> <i class="fa fa-plus"></i></button></h2>
-                                
-                           <div class="container">
                                   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBodalLabel"  aria-hidden="true">
                                         <div class="modal-dialog">
                                           <div class="modal-content">
@@ -80,10 +76,10 @@
                                       </div>
                                   </form>
                               
-                                      <div class="row" >
-                                      @foreach($tasks as $task)
-                                      <div class="card col-sm-3" style="height:13rem; margin:10px; background-image:url({{url('/assets/')}})" id="yoro" >
-                                            <div class="card-body" >
+                                      <div class="row" style="margin:auto; padding:auto;">
+                                      @foreach($tasks as $task) 
+                                      <div class="card col-sm-3" style="height:13rem; margin:5px;">
+                                            <div class="card-body" >                                      
                                                 <h5 class="card-title">{{ $task['titre']}} </h5>   
                                                 <h6 class="card-subtitle mb-2 text-muted">{{ $task['duration']}}</h6>
                                                 <p class="card-text">{{  $task['description']}}</p>
@@ -100,16 +96,14 @@
                                       </div>
                                       @endforeach
                               </div>           
-                       </div>          
-                                               
-             </div>  
+                              
+                                                 
                       @if(session('status'))
                 <div class="alert alert-danger"> {{session('status')}}</div>
                 @endif
                     @if(session('state'))
           <div class="alert alert-success"> {{session('state')}}</div>
           @endif
-     </div>
 
   
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>  
