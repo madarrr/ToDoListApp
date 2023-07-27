@@ -13,10 +13,8 @@
     <title>ToDoList</title>
 </head>
 <body>
-
     <div class="container">
-        
-                                 <h2 class="card-title">ToDoList  <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-whatever="@mdo" class="btn btn-primary btn-circle btn-sm" style="float:right"> <i class="fa fa-plus"></i></button></h2>
+                         <h2 class="card-title" style=>ToDoList  <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-whatever="@mdo" class="btn btn-primary btn-circle btn-sm" style="float:right"> <i class="fa fa-plus"></i></button></h2>
                                   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBodalLabel"  aria-hidden="true">
                                         <div class="modal-dialog">
                                           <div class="modal-content">
@@ -55,8 +53,6 @@
                                                 </select>
 
                                                 </div>
-                                         
-                                           
                                                 <div class="mb-3">
                                                 @error('description')
                                                   <p> {{$message }}</p>
@@ -85,11 +81,13 @@
                                                 <p class="card-text">{{  $task['description']}}</p>
                                                    <form action="{{route('tasks',$task->id)}}" method="POST">
                                                     @csrf
-                                                    @method('delete')                                        
-                                                     <button type="submit" data-id="{{ $task->id }}" class="btn btn-danger" style="height:38px; width:38px;"> <i class="fa fa-trash"></i></button>
-
+                                                    @method('delete')     
+                                                    <div class=" ">
+                                                    <button type="submit" data-id="{{ $task->id }}" class="btn btn-danger" style="height:38px; width:38px;"> <i class="fa fa-trash"></i></button>
                                                      <button type="button" class="btn btn-info rounded-circle" style="margin-left:5px;background-color:green;" ></button>
                                                      <button type="button" class="btn btn-info rounded-circle" style="background-color:orange" ></button>
+                                                    </div>                                   
+
                                                    </form>                                            
                                             </div>
                                                
