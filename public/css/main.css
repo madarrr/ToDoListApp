@@ -33,3 +33,12 @@ padding-top: 3%;
   float: right;
   border-radius: 15px;
 }
+#state-card{
+  float: right;
+
+  margin-top: -38px;
+  
+  }
+  #big-card{
+    margin-right:25px!important;
+    }

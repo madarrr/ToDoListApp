@@ -74,20 +74,20 @@
                               
                                       <div class="row" style="margin:auto; padding:auto;">
                                       @foreach($tasks as $task) 
-                                      <div class="card col-sm-3" style="height:13rem; margin:5px;">
-                                            <div class="card-body">    
-                                            <div class="card" style="width: 4rem; height:4rem;">
+                                      <div class="card col-lg-4 mb-4" style="height:14rem;" id="big-card">
+                                            <div class="card-body" >    
+                                        <div class="card" style="width: 4rem; height:4rem;" id="state-card">
                                             <div class="card-body">
                                             </div>
-                                       </div>                                  
+                                        </div>                                  
                                                 <h5 class="card-title">{{ $task['titre']}} </h5>   
                                                 <h6 class="card-subtitle mb-2 text-muted">{{ $task['duration']}}</h6>
                                                 <p class="card-text">{{  $task['description']}}</p>
                                                    <form action="{{route('tasks',$task->id)}}" method="POST">
                                                     @csrf
                                                     @method('delete')     
-                                                    <div class=" ">
-                                                    <button type="submit" data-id="{{ $task->id }}" class="btn btn-danger" style="height:38px; width:38px;"> <i class="fa fa-trash"></i></button>
+                                                  <div class="footer-card ">
+                                                     <button type="submit" data-id="{{ $task->id }}" class="btn btn-danger" style="height:38px; width:38px;"> <i class="fa fa-trash"></i></button>
                                                      <button type="button" class="btn btn-info rounded-circle" style="margin-left:5px;background-color:green;" ></button>
                                                      <button type="button" class="btn btn-info rounded-circle" style="background-color:orange" ></button>
                                                     </div>                                   
