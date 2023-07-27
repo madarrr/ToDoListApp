@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="container">
-                         <h2 class="card-title" style=>ToDoList  <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-whatever="@mdo" class="btn btn-primary btn-circle btn-sm" style="float:right"> <i class="fa fa-plus"></i></button></h2>
+                         <h2 class="card-title">ToDoList  <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-whatever="@mdo" class="btn btn-primary btn-circle btn-sm" style="float:right"> <i class="fa fa-plus"></i></button></h2>
                                   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBodalLabel"  aria-hidden="true">
                                         <div class="modal-dialog">
                                           <div class="modal-content">
@@ -75,7 +75,11 @@
                                       <div class="row" style="margin:auto; padding:auto;">
                                       @foreach($tasks as $task) 
                                       <div class="card col-sm-3" style="height:13rem; margin:5px;">
-                                            <div class="card-body" >                                      
+                                            <div class="card-body">    
+                                            <div class="card" style="width: 4rem; height:4rem;">
+                                            <div class="card-body">
+                                            </div>
+                                       </div>                                  
                                                 <h5 class="card-title">{{ $task['titre']}} </h5>   
                                                 <h6 class="card-subtitle mb-2 text-muted">{{ $task['duration']}}</h6>
                                                 <p class="card-text">{{  $task['description']}}</p>
