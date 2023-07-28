@@ -73,33 +73,30 @@
                                   </form>
                               
                                       <div class="row" style="margin:auto; padding:auto;">
-                                      @foreach($tasks as $task) 
-                                      <div class="card col-lg-4 mb-4" style="height:14rem;" id="big-card">
-                                            <div class="card-body" >    
-                                        <div class="card" style="width: 4rem; height:4rem;" id="state-card">
-                                            <div class="card-body">
+                                            @foreach($tasks as $task) 
+                                           <div class="card col-lg-4 mb-4" style="height:14rem;" id="big-card">
+                                            <div class="card-body" id="card-state">    
+                                              <div class="card" style="width: 4rem; height:4rem;" id="state-card">
+                                                  <div class="card-body">
+                                                  </div>
+                                              </div>                                  
+                                                      <h5 class="card-title">{{ $task['titre']}} </h5>   
+                                                      <h6 class="card-subtitle mb-2 text-muted">{{ $task['duration']}}</h6>
+                                                      <p class="card-text">{{  $task['description']}}</p>
+                                                
                                             </div>
-                                        </div>                                  
-                                                <h5 class="card-title">{{ $task['titre']}} </h5>   
-                                                <h6 class="card-subtitle mb-2 text-muted">{{ $task['duration']}}</h6>
-                                                <p class="card-text">{{  $task['description']}}</p>
-                                                   <form action="{{route('tasks',$task->id)}}" method="POST">
+                                            <form action="{{route('tasks',$task->id)}}" method="POST">
                                                     @csrf
                                                     @method('delete')     
-                                                  <div class="footer-card ">
+                                                  <div id="card-footer">
                                                      <button type="submit" data-id="{{ $task->id }}" class="btn btn-danger" style="height:38px; width:38px;"> <i class="fa fa-trash"></i></button>
                                                      <button type="button" class="btn btn-info rounded-circle" style="margin-left:5px;background-color:green;" ></button>
                                                      <button type="button" class="btn btn-info rounded-circle" style="background-color:orange" ></button>
-                                                    </div>                                   
-
-                                                   </form>                                            
-                                            </div>
-                                               
-                                      </div>
+                                                    </div>                                
+                                       </form>    
+                                       </div>
                                       @endforeach
-                              </div>           
-                              
-                                                 
+                              </div>                                
                       @if(session('status'))
                 <div class="alert alert-danger"> {{session('status')}}</div>
                 @endif
@@ -108,6 +105,9 @@
           @endif
 
   
+          <script type="text/javascript">
+
+          </script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>  
 </body>
 </html>
