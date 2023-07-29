@@ -37,7 +37,7 @@ class TaskRequest extends FormRequest
             //
             'titre' => 'required|string|max:30',
             'duration' => 'required|string',
-            'description' => 'required|string|max:100',
+            'description' => 'required|string|max:150',
         ];
     }
 }

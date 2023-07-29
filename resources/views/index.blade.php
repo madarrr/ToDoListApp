@@ -32,7 +32,7 @@
                                                   @error('titre')
                                                   <p> {{$message }}</p>
                                                   @enderror  
-                                                  <input type="text" class="form-control" id="titre" name="titre" required>
+                                                  <input type="text" class="form-control" id="titre" name="titre"  minlength="10" maxlength="50" required >
  
                                                 </div>
                                             
@@ -58,7 +58,7 @@
                                                   <p> {{$message }}</p>
                                                 @enderror
                                                   <label for="message-text" class="col-form-label">Description:</label>
-                                                  <textarea class="form-control" id="message-text" name="description" required ></textarea>
+                                                  <textarea class="form-control" id="message-text" name="description" minlength="10" maxlength="150" required></textarea>
 
                                                 </div>
                                            
